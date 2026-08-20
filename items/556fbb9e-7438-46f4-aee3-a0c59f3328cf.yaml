@@ -1,0 +1,141 @@
+kind: RELEASE_NOTE
+originId: 556fbb9e-7438-46f4-aee3-a0c59f3328cf
+title: ReleaseNote 2026.07
+summary: Test
+entries:
+  - tag: NEW_FEATURE
+    title: Course updates reach learners in app
+    body: >-
+      Learners now get sidebar notifications when they are assigned a course or
+      when a new course is published, so they can spot new work without browsing
+      the catalog or checking email.
+    sourceBuildNumber: rolai-university 0.1.23790
+  - tag: NEW_FEATURE
+    title: Convert legacy lessons in the editor
+    body: >-
+      Authors can now convert older block-based lessons into the current editor
+      format, review the result, and save only when they are ready, preserving
+      formatting such as links, tables, lists, media, and quizzes.
+    sourceBuildNumber: rolai-university 0.1.23790
+  - tag: BUG_FIX
+    title: Selected organizations receive publish notifications
+    body: >-
+      Publishing a course or learning path now notifies every selected
+      organization, so audiences outside the publisher’s own memberships are
+      informed.
+    sourceBuildNumber: rolai-university 0.1.23790
+  - tag: IMPROVEMENT
+    title: Updated University loading spinner
+    body: >-
+      Rolai University now shows an updated loading spinner while it starts, so
+      the boot screen better reflects that the app is loading.
+    sourceBuildNumber: rolai-university 0.1.23790
+  - tag: NEW_FEATURE
+    title: Organization-level access for Rolai University
+    body: >-
+      Rolai University now opens only for enabled organizations, so teams
+      without access are sent back to Rolai with a clear message instead of
+      reaching University screens.
+    sourceBuildNumber: rolai-university 0.1.23790
+  - tag: BUG_FIX
+    title: Panels and errors match your theme
+    body: >-
+      Learn, preview, and editor panels, empty states, and error notices now use
+      the right theme-aware colors, so they stay readable and consistent in both
+      light and dark mode.
+    sourceBuildNumber: rolai-university 0.1.23790
+  - tag: BUG_FIX
+    title: Approval steps show loop iteration titles
+    body: >-
+      Human approval steps now show which loop iteration they belong to across
+      Rolai surfaces, so approvers can review the request with context that was
+      previously hidden.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Let co-owners manage datastores
+    body: >-
+      You can now give a datastore co-owner access, so teammates can edit
+      records, manage settings and sharing, and keep shared knowledge bases
+      moving when the creator is unavailable.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: IMPROVEMENT
+    title: Separate Rolai and University token analytics
+    body: >-
+      Token analytics now has separate Rolai and University views, so admins can
+      review usage without a product filter that mixed metrics. University does
+      not show active users because login data is not product-specific.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: BUG_FIX
+    title: Azure log exports start reliably
+    body: >-
+      Azure Data Explorer log shipping now starts with the expected
+      configuration, so other configured destinations such as Log Analytics are
+      not taken down by it failing to initialize. The destination table still
+      needs to match the emitted log shape.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Co-owners can manage resource sharing
+    body: >-
+      Co-owners can now open the share panel and update who a resource is shared
+      with, so teams can delegate access management without handing over full
+      ownership. Editing and deleting still stay owner-only.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: IMPROVEMENT
+    title: 'Internal: smoother automated deployments'
+    body: >-
+      Rolai deployment configuration now matches the automation that drives
+      releases, so environment updates can be managed from one configuration
+      file with less risk of disrupting existing setups. Legacy deployment
+      configuration continues to work during migration.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: IMPROVEMENT
+    title: Rolai dependency security is stronger
+    body: >-
+      Rolai’s app, server, and extension now clear all fixable dependency
+      vulnerability checks, reducing exposure from known package issues while
+      keeping security scans running. A small set of accepted findings remains
+      documented.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: IMPROVEMENT
+    title: Template actions show less duplicate confirmation
+    body: >-
+      Sharing or deleting a Rolai template now confirms through the closing
+      dialog and refreshed list instead of an extra success toast, so the
+      workspace feels less noisy.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Share extension configurations with flow templates
+    body: >-
+      Publishers can now include selected extension configurations in local or
+      Catalogue flow templates, so installers get the needed page-action setup
+      and can edit their own copies before creating the flow.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: BUG_FIX
+    title: Disabled directory groups no longer disappear
+    body: >-
+      Disabled directory groups now stay visible in share access lists with a
+      warning, so owners know why access is inactive and do not remove the grant
+      by accident when updating access.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Default values for manual flow inputs
+    body: >-
+      You can now set default values for text, text area, and dropdown inputs on
+      manually run flows, so run forms, chat run dialogs, and flow interfaces
+      open with common answers already filled in.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: BUG_FIX
+    title: Credit statements show rate changes clearly
+    body: >-
+      Downloaded credit statements now use readable filenames and split model
+      and runtime usage into separate rows when rates change mid-month, so each
+      row reconciles to its charge. Months without rate changes still look the
+      same.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Verify only fields missing at run time
+    body: >-
+      You can now add a field list to a human approval step, turning a run-time
+      array such as document fields left blank into grouped editable inputs so
+      approvers review only the fields that need attention.
+    sourceBuildNumber: rolai-server 0.1.25000
