@@ -1,0 +1,97 @@
+kind: RELEASE_NOTE
+originId: d98a87c4-0b39-4f66-bd0d-ead35192f0b0
+title: Release Note 2026.08
+summary: "This release is mostly about richer learning experiences, clearer progress, and stronger control around the work happening in Rolai.\r\n\r\n**Course teams get a much better creation loop.** You can build richer lessons with media, files, tables, callouts, links, and knowledge checks, then trust that preview and learner views match. Ask Rolai now reads editor-built lessons, and knowledge checks in edited lessons save and grade correctly, so authors can build with fewer interruptions and learners get the feedback they expect.\r\n\r\n**Learners and admins get more clarity.** Progress pages bring course progress, learning paths, certificates, streaks, badges, and next actions into one place, while Explore is easier to browse by category. Admins also get clearer credit activity, downloadable monthly credit statements, stronger usage attribution, and a unified sharing panel for managing access with more confidence.\r\n\r\nWe’re tightening the loop between building, learning, measuring, and managing — so Rolai feels easier to run as your work grows."
+entries:
+  - tag: IMPROVEMENT
+    title: 'Internal: cleaner release checks'
+    body: >-
+      Rolai now checks for unused application code before changes ship, so fixes
+      and new work move through a cleaner path with less risk from stale code.
+    sourceBuildNumber: rolai 0.1.24211
+  - tag: NEW_FEATURE
+    title: Separate execution and approval outcomes
+    body: >-
+      You can now see whether a flow ran successfully separately from whether a
+      human approver rejected it, so approval patterns no longer get hidden
+      inside the execution success rate.
+    sourceBuildNumber: rolai 0.1.24211
+  - tag: NEW_FEATURE
+    title: Extension reaches new Rolai subdomains
+    body: >-
+      The Rolai browser extension can now work across supported domain families,
+      so new Rolai environments can come online without waiting for a separate
+      extension release. Shared hosting domains still use exact entries for
+      safety.
+    sourceBuildNumber: rolai 0.1.24211
+  - tag: NEW_FEATURE
+    title: List more datastore records at once
+    body: >-
+      You can now retrieve up to 1,000 records with the List Records action,
+      including in existing flows, so larger datastore result sets need less
+      extra paging.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: NEW_FEATURE
+    title: Download monthly credit statements
+    body: >-
+      Rolai admins can now download a styled Excel statement for an
+      organization’s calendar-month charges, with platform fees, AI token usage
+      by model, flow minutes, browser minutes, and balance reconciliation in one
+      place for invoice prep. Amounts are shown in credits only.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: BUG_FIX
+    title: Page prefills handle typed flow inputs
+    body: >-
+      Typed flow fields like dates, dropdowns, numbers, and checkboxes now
+      prefill from page context in the format each field expects, so
+      extension-triggered flow runs start with cleaner inputs. Values Rolai
+      cannot safely match are left blank instead of guessed.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: IMPROVEMENT
+    title: 'Internal: steadier compliance tagging'
+    body: >-
+      Infrastructure tags now carry through more Rolai resources, so compliance
+      classification is less likely to reopen manual work after syncs. Existing
+      open compliance tasks still need separate classification.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: BUG_FIX
+    title: Element picker works on repeat
+    body: >-
+      You can now use the element picker repeatedly in the same tab to capture
+      selectors for conditions, inputs, anchors, and relevance context, without
+      every pick button switching to cancel at once.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: BUG_FIX
+    title: Stalled flow runs now close cleanly
+    body: >-
+      Flow runs that stop making progress now cancel or fail automatically after
+      their inactivity window, so run history, human approval steps, extension
+      sessions, and billing no longer stay stuck behind abandoned work.
+      Completed work before the stall may still be billed.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: NEW_FEATURE
+    title: Broader FHIR MCP server access
+    body: >-
+      You can now grant the FHIR MCP server additional scopes, so agents can
+      work with more of the FHIR data and actions your setup allows.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: NEW_FEATURE
+    title: Track learning progress and streaks
+    body: >-
+      Learners can now see their daily activity streak, achievement badges, and
+      per-course progress with resume or review actions, while admins can open
+      the same dashboard to spot where someone is stuck.
+    sourceBuildNumber: rolai-university 0.1.23174
+  - tag: IMPROVEMENT
+    title: 'Internal: cleaned up app routing'
+    body: >-
+      Rolai’s route map no longer includes a leftover demo reference, reducing
+      the chance of navigation or release issues from a route that was never
+      available.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: BUG_FIX
+    title: Course Assistant usage metering stays accurate
+    body: >-
+      Course Assistant token usage is now recorded for the right organization,
+      so metering keeps working as Rolai separates processing by organization.
+    sourceBuildNumber: rolai-university 0.1.23790
