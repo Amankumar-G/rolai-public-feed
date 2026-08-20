@@ -1,0 +1,153 @@
+kind: RELEASE_NOTE
+originId: fc4cc7f2-0040-4327-b018-a07e5216fb35
+title: ReleaseNote Latest
+summary: "This release is about making learning in Rolai richer to create, easier to navigate, and more dependable to run.\r\n\r\n**You can build and trust richer courses.** The lesson editor now supports callouts, media, files, links, tables, and knowledge checks, with learner and preview views matching what you authored. Ask Rolai now reads lessons made in that editor, and knowledge checks in edited lessons grade against the quiz learners actually saw while keeping answer keys out of learner-facing data.\r\n\r\n**You get a clearer learning hub and steadier operations.** Learners can track courses, learning paths, certificates, and key stats from one progress page, while Explore is easier to browse by expandable categories. For teams managing the platform, sharing now uses one reviewable side panel, credit and analytics pages show more complete activity, and saved work or OpenAI-backed actions that pointed at retired models keep running on current replacements.\r\n\r\nThese updates push the learning experience toward one consistent loop: author, discover, learn, measure, and manage with fewer surprises."
+entries:
+  - tag: IMPROVEMENT
+    title: Quieter browser extension logs
+    body: >-
+      The Rolai browser extension no longer writes temporary diagnostic warnings
+      during ordinary tab switching, so console output stays focused on messages
+      that matter. Session creation, push delivery, and auto-start behavior are
+      unchanged.
+    sourceBuildNumber: rolai 0.1.24211
+  - tag: BUG_FIX
+    title: OpenAI-backed actions no longer request retired models
+    body: >-
+      Rolai now routes default OpenAI-backed chat, Search Knowledge flow
+      actions, summaries, and browser-extension fallback responses to an
+      available model, so they no longer fail with model-not-found errors from
+      retired chat models.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: BUG_FIX
+    title: Older token charges show their models
+    body: >-
+      Credit statements now recover the model for older token charges when the
+      matching usage record is available, so historical spend is split into
+      per-model credit rows instead of one Unattributed total. If that record is
+      missing, the charge remains Unattributed.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: BUG_FIX
+    title: Retired OpenAI models stop breaking saved work
+    body: >-
+      Saved conversations, agents, flows, templates, and model preferences that
+      referenced retired OpenAI models now use current replacements, so they
+      keep running instead of failing on unavailable models. Past message
+      history is unchanged.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: IMPROVEMENT
+    title: 'Internal: safer compiler migration'
+    body: >-
+      Rolai can now check the current app against the next TypeScript compiler
+      without changing the existing build, so future platform upgrades can be
+      validated with less risk.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: IMPROVEMENT
+    title: Unified sharing side panel
+    body: >-
+      You can now manage sharing for agents, flows, projects, skills,
+      datastores, and templates in one side panel, review staged changes before
+      saving, and keep organization access alongside named people and groups so
+      access changes are clearer and no longer overwrite named grants.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: BUG_FIX
+    title: Browser sessions no longer get stranded
+    body: >-
+      Halted or failed flow runs now keep the live view and Stop or Take Control
+      options when a browser session is still active, so you can recover or end
+      the session without leaving a browser running.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: BUG_FIX
+    title: Credit pages show accurate activity
+    body: >-
+      Credit and analytics pages now show flow names, top-up decision makers,
+      timestamps, and corrected usage calculations, so admins can understand
+      charges, top-ups, and flow performance with fewer gaps. Active-user counts
+      will correct as users log in again.
+    sourceBuildNumber: rolai 0.1.24362
+  - tag: IMPROVEMENT
+    title: 'Internal: Anthara development workflow'
+    body: >-
+      Rolai's development environment now connects to Anthara automatically,
+      giving the team shared spec-driven workflows and governance checks so
+      product changes are easier to keep consistent.
+    sourceBuildNumber: rolai-university 0.1.23174
+  - tag: NEW_FEATURE
+    title: Track your learning progress
+    body: >-
+      Learners can now see their course progress, learning paths, certificates,
+      and key stats in one progress page, making it easier to understand what is
+      active, completed, and next.
+    sourceBuildNumber: rolai-university 0.1.23174
+  - tag: NEW_FEATURE
+    title: Browse Explore by expandable categories
+    body: >-
+      You can now scan Explore by category, preview a few courses or learning
+      paths, and expand any section in place when you want to see more.
+    sourceBuildNumber: rolai-university 0.1.23174
+  - tag: NEW_FEATURE
+    title: Create richer lesson pages
+    body: >-
+      You can now author lessons in a rich editor with callouts, media, files,
+      links, tables, and knowledge checks, use a resizable course sidebar while
+      editing, and rely on matching learner and preview rendering so what you
+      build is what learners see.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: BUG_FIX
+    title: Multiple-select knowledge checks save correctly
+    body: >-
+      You can now save lessons with multiple-select knowledge checks, and
+      validation messages appear and clear next to the option that needs
+      attention so authors can resolve issues while editing. Lessons with
+      duplicate option text will need those duplicates removed before the next
+      save.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: BUG_FIX
+    title: Ask Rolai reads editor-built lessons
+    body: >-
+      Ask Rolai can now search and answer from lessons created in the lesson
+      editor, so course questions no longer come back as if the lesson had no
+      content. Knowledge check answers stay out of the assistant context.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: BUG_FIX
+    title: Knowledge checks grade in edited lessons
+    body: >-
+      Learners now receive correct or incorrect feedback when they submit
+      knowledge checks from lessons built in the current editor, so course
+      progress is graded against the quiz they saw and answer keys are kept out
+      of learner lesson data.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: IMPROVEMENT
+    title: 'Internal: Anthara development integration'
+    body: >-
+      The Rolai development workspace now connects to Anthara automatically,
+      reducing setup friction and giving the team shared agents, skills, and
+      governance checks for spec-driven development.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: BUG_FIX
+    title: My Progress stays highlighted on progress pages
+    body: >-
+      When learners open a course progress page from My Progress, the sidebar
+      now keeps My Progress highlighted instead of switching to Hub, so
+      navigation matches where they are.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: BUG_FIX
+    title: Weekly progress labels show the right week
+    body: >-
+      Learners enrolled for more than eight weeks now see weekly-time chart
+      labels that match their actual week in the course, making progress history
+      easier to read. Labels now use “Week N” instead of “WN”.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: IMPROVEMENT
+    title: Clearer API request tracing
+    body: >-
+      Rolai’s request tracing now groups API traffic by endpoint instead of
+      collapsing it into one generic operation, so issues are easier to spot and
+      diagnose.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: IMPROVEMENT
+    title: Course cards look more consistent
+    body: >-
+      Courses and learning paths without cover images now use fallback gradients
+      that match the Explore banners, so the learning hub feels more cohesive.
+    sourceBuildNumber: rolai-university 0.1.23579
