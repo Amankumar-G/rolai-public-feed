@@ -1,0 +1,4 @@
+kind: ANNOUNCEMENT
+originId: d5d93dd4-91b9-49bc-837f-ec69cbfa44e0
+title: Introducing Flow Inside Extensions
+body: "**Bring your flows directly into your extensions.**\r\n\r\nYou can now use **Flows inside Extensions**, making it easier to bring powerful automation and AI capabilities exactly where you need them.\r\n\r\nWith this update, you can:\r\n\r\n* **Run flows directly from your extension** without switching between different parts of Rolai.\r\n* *Connect your extension experience with existing flows* for seamless automation.\r\n* **Reuse existing flows** instead of building the same logic again.\r\n* Create more **context-aware and powerful experiences** by combining extensions with flows.\r\n\r\n> **Build once. Extend everywhere.**\r\n\r\nThis makes Extensions more flexible and gives you a simpler way to bring **automation, AI, and business logic** closer to your users."
