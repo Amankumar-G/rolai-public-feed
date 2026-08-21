@@ -1,0 +1,157 @@
+kind: RELEASE_NOTE
+originId: 81855c99-b23c-4e14-9cb8-11f9aacbaecc
+title: Large Prompt
+summary: "This release is mostly about making Rolai easier to share, scale, and keep moving when work spans teams, organizations, and longer-running flows.\r\n\r\n**You get stronger collaboration where ownership used to be a bottleneck.** Co-owners can now manage shared agents, including edits, deletes, knowledge files, skills, and allowed template actions, so work does not have to pause when the original owner is unavailable. Global flow templates also arrive alongside local ones, giving you a broader catalogue to browse, publish, install, and tailor before creating a flow.\r\n\r\n**Admins get more control with less manual work.** University publish targets can now reach active users across organizations where enabled, directory groups can be mirrored into Rolai for SCIM-managed membership, and announcements can be managed directly from the admin console.\r\n\r\nWe also tightened the run experience: clearer flow failures, more reliable approval navigation, restored Outlook attachments, and readable summaries for large outputs all point toward smoother day-to-day execution."
+entries:
+  - tag: IMPROVEMENT
+    title: Smoother lesson block editing
+    body: >-
+      Course authors can now confirm block deletes, keep typing after inserting
+      a block, and add inline knowledge checks without raw validation toasts, so
+      lesson building has fewer interruptions.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: IMPROVEMENT
+    title: University incidents are easier to diagnose
+    body: >-
+      University backend requests now connect traces, database activity, and
+      related logs, so support can investigate production issues with clearer
+      context when something goes wrong.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: IMPROVEMENT
+    title: Course Assistant usage history is retained
+    body: >-
+      Course Assistant conversations now record AI token consumption with user
+      and organization attribution, so cost and usage history is not lost before
+      reporting, billing, or quota features use it. No University usage view is
+      added yet.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: IMPROVEMENT
+    title: 'Internal: Anthara-guided development'
+    body: >-
+      Rolai development now loads Anthara guidance automatically for every
+      developer, helping future changes follow shared specs and governance
+      checks more consistently.
+    sourceBuildNumber: rolai-university 0.1.23579
+  - tag: BUG_FIX
+    title: Large flow outputs show in Text tab
+    body: >-
+      Large flow action outputs now show a trimmed summary in the activity
+      panel’s Text tab instead of failing with “No output available,” so you can
+      review results without switching to JSON.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Co-owners can manage shared agents
+    body: >-
+      Co-owners can now edit and delete shared agents, manage their knowledge
+      files and skills, and use allowed Rolai template actions, so work can
+      continue when the owner is unavailable. Organization-level agent templates
+      still require an owner or admin.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: BUG_FIX
+    title: Outlook file attachments work again
+    body: >-
+      Flows that attach generated files in Composio Outlook actions no longer
+      stop with a 400 error, so emails can be sent with the files your flow
+      creates.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Mirror directory groups in Rolai
+    body: >-
+      Organizations using SCIM directory provisioning can now mirror pushed
+      directory groups as Rolai user groups, so the directory stays in charge of
+      membership while Rolai role mappings choose roles and unmapped members
+      keep the organization default role. Mirrored groups start disabled and
+      grant no access until an administrator enables them.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: BUG_FIX
+    title: EMR practice bindings cannot be redirected
+    body: >-
+      An already registered organization stays tied to its original EMR
+      practice: the owning practice can refresh credentials, while another
+      practice is rejected before anything is changed, keeping later provider
+      launches authenticated against the right practice. Rebinding to a
+      different practice now returns a conflict.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Manage announcements from the admin console
+    body: >-
+      Admins can now create, edit, publish, unpublish, and remove announcements,
+      release notes, and changelog entries with images, so content no longer has
+      to be prepared by hand.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: BUG_FIX
+    title: Co-owned agent searches no longer fail
+    body: >-
+      Co-owned agents with documents or knowledge base attachments from multiple
+      owners now search that content without access errors, and co-owners see
+      the owner’s profile image without an upload option.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Credit alerts reach admins automatically
+    body: >-
+      The right admins now get in-app or email alerts for top-up activity, low
+      or depleted credits, and held charges, so requests and credit risks are
+      less likely to sit unnoticed. Rolai admins receive email-only alerts
+      because in-app notifications are tied to a single organization.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: BUG_FIX
+    title: Failed flow steps show errors immediately
+    body: >-
+      When a flow step fails, the run now moves to Failed and shows the error
+      right away, and Rolai repairs affected stuck runs in the background so
+      your run history reflects what happened.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: BUG_FIX
+    title: Approval navigation no longer disappears
+    body: >-
+      As reviewers work through human approval steps, the panel now keeps its
+      counter and navigation visible across the run, so they can continue to the
+      next pending approval instead of waiting for another update to restore it.
+      In parallel loops, some remaining approvals may still need Go to pending
+      approval.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: IMPROVEMENT
+    title: Agent and flow roles are clearer
+    body: >-
+      Rolai now uses your resolved role, including direct and group access, to
+      decide which agent and flow controls to show, so shared agents and flows
+      can reflect co-ownership more accurately. Owner-only editing and deletion
+      remain unchanged for now.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: IMPROVEMENT
+    title: 'Internal: faster release checks'
+    body: >-
+      Release checks now run faster and coverage reports include files that were
+      previously missed, so fixes can move through validation with clearer
+      signals.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: Use global flow templates
+    body: >-
+      You can now browse, publish, and install global flow templates alongside
+      local ones, choosing which included files to keep and adding your own
+      before creating a flow. If the catalogue is unavailable, local templates
+      still work.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: IMPROVEMENT
+    title: Access updates ship more reliably
+    body: >-
+      Changes to access settings now pass build checks cleanly, reducing the
+      chance that release work is delayed by mismatched access data.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: NEW_FEATURE
+    title: University publish targets across organizations
+    body: >-
+      Organization admins in enabled University organizations can now search and
+      filter active users across organizations when selecting publish targets,
+      so cross-organization publishing reaches the intended audience. Access is
+      limited by admin permissions and rollout settings.
+    sourceBuildNumber: rolai-server 0.1.25000
+  - tag: IMPROVEMENT
+    title: Sharing groundwork for co-ownership
+    body: >-
+      Rolai now stores a role for each person or group on shared resources,
+      laying the groundwork for co-owner access while keeping current
+      permissions unchanged. Current sharing behavior is unchanged until
+      co-ownership is enabled.
+    sourceBuildNumber: rolai-server 0.1.25000
